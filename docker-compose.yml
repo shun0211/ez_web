@@ -9,7 +9,7 @@ services:
       - "3310:3306"
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_data3:/var/lib/mysql
   ez_web:
     build: .
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -30,6 +30,6 @@ services:
     tty: true
 
 volumes:
-  mysql_data:
+  mysql_data3:
   rails_gem_data:
     driver: local
