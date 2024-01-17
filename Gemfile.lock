@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/shun0211/seed-fu.git
+  revision: 2c9aa403ce0c665a634e49aff6b4293500b8b4e7
+  branch: support-rails-7
+  specs:
+    seed-fu (2.3.9)
+      activerecord
+      activesupport
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -312,6 +321,7 @@ DEPENDENCIES
   rubocop
   rubocop-rails
   rubocop-rspec
+  seed-fu!
   selenium-webdriver
   sprockets-rails
   stimulus-rails

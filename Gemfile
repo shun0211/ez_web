@@ -66,3 +66,4 @@ end
 gem "tailwindcss-rails", "~> 2.3"
 gem "devise"
 gem 'enum_help'
+gem 'seed-fu', github: 'shun0211/seed-fu', branch: 'support-rails-7'
