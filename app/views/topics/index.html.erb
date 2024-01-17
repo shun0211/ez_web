@@ -1,0 +1,40 @@
+<div class="flex flex-col min-h-screen w-full">
+  <%= render "shared/header" %>
+  <main class="flex-grow flex bg-white dark:bg-gray-900">
+    <%= render "shared/sidebar" %>
+    <div class="container flex-grow py-12 px-4 mx-auto">
+      <nav class="mb-8">
+        <ul class="flex space-x-4">
+          <% @learning_stages.each do |stage| %>
+            <li>
+              <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 px-4 py-2">
+                <%= stage %>
+              </button>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <% @topics.each do |topic| %>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h2 class="text-2xl font-bold"><%= topic.name %></h2>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-600">
+                詳細
+              </p>
+              <button
+                class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-10 px-4 py-2"
+                onclick="location.href='<%= confirmation_questions_path(topic_id: topic.id) %>'"
+              >
+                確認テスト
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </main>
+  <%= render "shared/footer" %>
+</div>
