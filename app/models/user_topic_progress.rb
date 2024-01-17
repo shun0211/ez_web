@@ -1,0 +1,2 @@
+class UserTopicProgress < ApplicationRecord
+end

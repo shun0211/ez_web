@@ -1,0 +1,2 @@
+class ConfirmationQuestion < ApplicationRecord
+end
