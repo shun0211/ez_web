@@ -1,0 +1,22 @@
+<div class="flex flex-col min-h-screen w-full">
+  <%= render "shared/header" %>
+  <main class="flex-grow flex bg-white">
+    <%= render "shared/sidebar" %>
+    <div class="container flex-grow py-12 px-4 mx-auto">
+      <div class="pb-3">
+        <%= link_to "質問する", new_question_path, class: "btn btn-primary" %>
+      </div>
+      <%= form_with url: questions_path, class: "" do |f| %>
+        <div class="flex space-x-4">
+          <%= f.text_field :keyword, class: "form-control" %>
+          <%= f.select :topic_id, options_for_select(@topics.map { |t| [t.name, t.id] }), { include_blank: "トピック" }, class: "form-select" %>
+          <%= f.submit "検索", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      <div>
+        <%= render @questions %>
+      </div>
+    </div>
+  </main>
+  <%= render "shared/footer" %>
+</div>
