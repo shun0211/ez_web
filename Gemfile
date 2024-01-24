@@ -63,7 +63,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tailwindcss-rails", "~> 2.3"
 gem "devise"
+gem 'dotenv-rails'
 gem 'enum_help'
 gem 'seed-fu', github: 'shun0211/seed-fu', branch: 'support-rails-7'
+gem 'slack-notifier'
+gem "tailwindcss-rails", "~> 2.3"
