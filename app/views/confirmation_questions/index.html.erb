@@ -11,6 +11,7 @@
         </div>
         <div class="p-6">
           <%= form_with url: confirmation_answers_bulk_update_path, method: :post, class: "space-y-4" do |form| %>
+            <%= form.hidden_field :topic_id, value: @topic.id %>
             <% @confirmation_questions.each_with_index do |q, index| %>
               <div>
                 <label class="block text-gray-700">Q <%= index + 1 %> <%= q.question %></label>
@@ -18,10 +19,8 @@
               </div>
             <% end %>
             <div class="flex space-x-4">
-              <%= form.submit "提出", class: "btn btn-active btn-accent" %>
-              <button class="btn btn-active">
-                下書き保存
-              </button>
+              <%= form.submit "提出", class: "btn btn-active btn-accent", id: "submit-button" %>
+              <%= form.submit "下書き保存", class: "btn btn-active btn-accent", id: "draft-button" %>
             </div>
           <% end %>
         </div>
