@@ -18,4 +18,6 @@
 class ConfirmationAnswer < ApplicationRecord
   belongs_to :confirmation_question
   belongs_to :user
+
+  delegate :topic, to: :confirmation_question
 end

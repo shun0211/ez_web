@@ -5,7 +5,18 @@ class ConfirmationAnswersController < ApplicationController
       answer.answer = params[:questions][question_id]
       answer.save! if answer.changed?
     end
-    slack_notifier.ping "#{current_user.id}さんの回答が提出されました🎉"
-    redirect_to topics_path, notice: '回答を提出しました！'
+
+    if params[:status] == "submitted"
+      slack_notifier.ping "#{current_user.id}さんの回答が提出されました🎉" if Rails.env.production?
+      redirect_to topics_path, notice: '回答を提出しました🎉'
+    elsif params[:status] == "draft"
+      redirect_to confirmation_questions_path(topic_id: topic.id), notice: '回答を一時保存しました👍'
+    end
+  end
+
+  private
+
+  def topic
+    @topic ||= Topic.find(params[:topic_id])
   end
 end
