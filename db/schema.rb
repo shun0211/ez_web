@@ -92,23 +92,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_122527) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
-  create_table "topics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "learning_stage"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_topic_progresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "topic_progresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "topic_id", null: false
     t.integer "status", default: 0, null: false
     t.datetime "completed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["topic_id"], name: "index_user_topic_progresses_on_topic_id"
-    t.index ["user_id"], name: "index_user_topic_progresses_on_user_id"
+    t.index ["topic_id"], name: "index_topic_progresses_on_topic_id"
+    t.index ["user_id"], name: "index_topic_progresses_on_user_id"
+  end
+
+  create_table "topics", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "learning_stage"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
