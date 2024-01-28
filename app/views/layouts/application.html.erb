@@ -9,6 +9,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <!-- ワークアラウンド https://github.com/rails/rails/issues/43441#issuecomment-1019426236 -->
+    <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">

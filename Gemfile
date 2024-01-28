@@ -65,6 +65,7 @@ group :test do
   gem 'rspec-rails'
 end
 
+gem "dartsass-rails"
 gem "devise"
 gem 'dotenv-rails'
 gem 'enum_help'
