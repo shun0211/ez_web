@@ -67,6 +67,7 @@ end
 
 gem "dartsass-rails"
 gem "devise"
+gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'enum_help'
 gem 'seed-fu', github: 'shun0211/seed-fu', branch: 'support-rails-7'

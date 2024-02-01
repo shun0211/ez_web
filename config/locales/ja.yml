@@ -12,3 +12,10 @@ ja:
       question:
         title: タイトル
         content: 内容
+  enums:
+    topic:
+      learning_stage:
+        basic: 基礎
+        advanced: 応用
+        portfolio: ポートフォリオ作成
+        interviewing: 転職活動
