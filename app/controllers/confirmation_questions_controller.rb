@@ -1,4 +1,6 @@
 class ConfirmationQuestionsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @topic = Topic.find(params[:topic_id])
     @confirmation_questions = @topic.confirmation_questions.order(:id)

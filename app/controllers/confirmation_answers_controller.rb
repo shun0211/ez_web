@@ -1,4 +1,6 @@
 class ConfirmationAnswersController < ApplicationController
+  before_action :authenticate_user!
+
   def bulk_update
     params[:questions].keys.each do |question_id|
       answer = ConfirmationAnswer.where(user_id: current_user.id, confirmation_question_id: question_id).first_or_initialize
