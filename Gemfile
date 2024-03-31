@@ -65,11 +65,13 @@ group :test do
   gem 'rspec-rails'
 end
 
+gem 'aws-sdk-s3'
 gem "dartsass-rails"
 gem "devise"
 gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'enum_help'
+gem 'mini_magick'
 gem 'seed-fu', github: 'shun0211/seed-fu', branch: 'support-rails-7'
 gem 'slack-notifier'
 gem "tailwindcss-rails", "~> 2.3"

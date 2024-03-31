@@ -1,0 +1,18 @@
+<div class="flex flex-col min-h-screen w-full">
+  <%= render "shared/header" %>
+  <main class="flex-grow flex bg-white">
+    <%= render "shared/sidebar" %>
+    <div class="container flex-grow py-12 px-4 mx-auto">
+      <div class="flex">
+        <div class="profile">
+          <div class="flex items-center">
+            <p><%= current_user.name %></p>
+        </div>
+        <div>
+          <h3><%= @question.title %></h3>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%= render "shared/footer" %>
+</div>
